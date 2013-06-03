@@ -22,7 +22,7 @@
          */
         public function __construct() {
             $this->classNameMapping = array(
-                //'Skype' => __DIR__ . \DIRECTORY_SEPARATOR . 'skypephp'
+                'Skype' => __DIR__
             );
         }
 
