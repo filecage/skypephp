@@ -59,6 +59,17 @@
         }
 
         /**
+         * Applies an event handler to the COM object and injects the SkypeCom object
+         *
+         * @param object $eventHandler
+         * @return bool
+         */
+        public function applyEventHandler($eventHandler) {
+            $eventHandler->injectSkypeCom($this);
+            return com_event_sink($this->com, $eventHandler, '_ISkypeEvents');
+        }
+
+        /**
          * @return string
          */
         public function getReply() {

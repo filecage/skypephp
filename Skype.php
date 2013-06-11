@@ -47,4 +47,13 @@
 
         }
 
+        /**
+         * Pass-through for event handler
+         *
+         * @param $eventHandler
+         */
+        public function applyEventHandler($eventHandler) {
+            $this->skype->applyEventHandler($eventHandler);
+        }
+
     }
