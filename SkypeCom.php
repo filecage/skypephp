@@ -28,6 +28,9 @@
          */
         public function __construct() {
             $this->com = new \COM('Skype4COM.Skype');
+
+            // Immediately promote our interface to receive incoming replies
+            $this->raw('PING');
         }
 
         /**
@@ -56,6 +59,7 @@
             $this->reply = $command->Reply;
 
             return $command->Reply;
+
         }
 
         /**
