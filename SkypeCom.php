@@ -38,9 +38,10 @@
          *
          * @param string $commandStr
          * @param mixed $args An Array or a single value to be injected for vsprintf
+         * @param bool $blocking Whether to block or not block the request
          * @return string
          */
-        public function raw($commandStr, $args = null) {
+        public function raw($commandStr, $args = null, $blocking = false) {
 
             // Convert single value to array
             if (!is_null($args) && !is_array($args)) {
@@ -52,7 +53,7 @@
                 $commandStr = vsprintf($commandStr, $args);
             }
 
-            $command = $this->com->Command($this->cmdId, $commandStr, substr($commandStr, strpos($commandStr, ' ') + 1), true);
+            $command = $this->com->Command($this->cmdId, $commandStr, substr($commandStr, strpos($commandStr, ' ') + 1), $blocking);
             $this->com->SendCommand($command);
 
             $this->cmdId++;
