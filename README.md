@@ -1,8 +1,7 @@
 skypephp
 ========
+**A Skype API PHP Wrapper**
 
-A Skype API PHP Wrapper
----------------------------------------------------------------------
 
 * Based on Skype4COM
 * Windows compatible
